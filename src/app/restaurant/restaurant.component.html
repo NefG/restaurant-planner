@@ -1,0 +1,52 @@
+<div class="page-container">
+    <div class="side-view left">
+        <div class="size-param-box">
+            <div class="param-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>Size X</mat-label>
+                    <input matInput maxlength="2" [(ngModel)]="floorPlan._x">
+                </mat-form-field>
+            </div>
+            <div class="param-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>Size Y</mat-label>
+                    <input matInput maxlength="2" [(ngModel)]="floorPlan._y">
+                </mat-form-field>
+            </div>
+            <button class="param-field" mat-raised-button (click)="floorPlan.resize()">Resize</button>
+        </div>
+    </div>
+    <div class="main-view">
+        <div class="floorplan" style.width="{{floorPlan.w}}px" style.height="{{floorPlan.h}}px">
+            <div *ngFor="let wall of floorPlan.vWall; index as i" [style.top]="wall.y" [style.left]="wall.x" [style.width]="wall.w" [style.height]="wall.h" [class.walled]="wall.hasWall" (click)="wall.toggleWall()" class="wallplan-cell"></div>
+            <div *ngFor="let wall of floorPlan.hWall; index as i" [style.top]="wall.y" [style.left]="wall.x" [style.width]="wall.w" [style.height]="wall.h" [class.walled]="wall.hasWall" (click)="wall.toggleWall()" class="wallplan-cell"></div>
+            <div *ngFor="let cell of floorPlan.floor; index as i" style.width="{{floorPlan.c}}px" style.height="{{floorPlan.c}}px" (click)="cell.componentData = componentList.selection" class="floorplan-cell">
+                <div *ngIf="cell.hasComponent" style="position: relative;">
+                    <img [src]="cell.componentData?.image" style="width: 100%; height: 100%"
+                    [class.face-up]="cell.orientation?.element==0"
+                    [class.face-left]="cell.orientation?.element==1"
+                    [class.face-down]="cell.orientation?.element==2"
+                    [class.face-right]="cell.orientation?.element==3">
+                    <span class="icon-shelf">
+                        <i class="fa-solid fa-rotate icon" style="font-size: 18px;" (click)="cell.rotate($event)"></i>
+                        <i class="fa-solid fa-xmark icon" (click)="cell.removeComponent($event)"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="side-view right">
+        <ul class="component-list" cdkListbox
+        [cdkListboxValue]="componentList.selection"
+        [cdkListboxCompareWith]="componentList.equals"
+        (cdkListboxValueChange)="componentList.change($event)">
+            <li *ngFor="let component of componentList.list;" [cdkOption]="component">
+                <img class="component-image" [src]="component.thumbnail">
+                <span class="component-text">
+                    <span class="title">{{ component.name }}</span>
+                    <span class="description">{{ component.description }}</span>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
