@@ -179,7 +179,7 @@ export interface iComponent {
     image:string;
 }
 
-export const CAT_LIST = ['Cooking', 'Kitchen', 'Dining room', 'Cleaning', 'Automation', 'Research', 'Footwear', 'Miscellaneous'];
+export const CAT_LIST = ['Cooking', 'Kitchen', 'Dining room', 'Cleaning', 'Automation', 'Research', 'Footwear', 'Miscellaneous', 'Ingredients', 'Equipment'];
 
 export class ComponentList {
     public list:Array<iComponent> = [
@@ -268,6 +268,40 @@ export class ComponentList {
         { id: 75, type: 2, category: CAT_LIST[7], name: 'Fire Extinguisher', description: 'Maybe you just need less fire', thumbnail: 'assets/thumbnail/fireextinguisher.png', image: 'assets/image/fire_extinguisher.png' },
         { id: 76, type: 2, category: CAT_LIST[7], name: 'Ordering Terminal', description: 'Comes with a speedy-service guarantee', thumbnail: 'assets/thumbnail/orderingterminal.png', image: 'assets/image/ordering_terminal.png' },
         { id: 77, type: 2, category: CAT_LIST[7], name: 'Specials Terminal', description: 'Can interest you in something else, instead?', thumbnail: 'assets/thumbnail/specialsterminal.png', image: 'assets/image/specials_terminal.png' },
+
+        { id: 78, type: 2, category: CAT_LIST[8], name: 'Apple', description: '', thumbnail: 'assets/thumbnail/apple-provider.png', image: 'assets/image/apple.png' },
+        { id: 79, type: 2, category: CAT_LIST[8], name: 'Beans', description: '', thumbnail: 'assets/thumbnail/beansingredient-provider.png', image: 'assets/image/beans.png' },
+        { id: 80, type: 2, category: CAT_LIST[8], name: 'Fish', description: '', thumbnail: 'assets/thumbnail/fishblueraw-provider.png', image: 'assets/image/seafood.png' },
+        { id: 81, type: 2, category: CAT_LIST[8], name: 'Broccoli', description: '', thumbnail: 'assets/thumbnail/broccoliraw-provider.png', image: 'assets/image/broccoli.png' },
+        { id: 82, type: 2, category: CAT_LIST[8], name: 'Burger Bun', description: '', thumbnail: 'assets/thumbnail/burgerbun-provider.png', image: 'assets/image/burger_bun.png' },
+        { id: 83, type: 2, category: CAT_LIST[8], name: 'Burger Patty', description: '', thumbnail: 'assets/thumbnail/burgerpattyraw-provider.png', image: 'assets/image/burger_patty.png' },
+        { id: 84, type: 2, category: CAT_LIST[8], name: 'Carrot', description: '', thumbnail: 'assets/thumbnail/carrot-provider.png', image: 'assets/image/carrot.png' },
+        { id: 85, type: 2, category: CAT_LIST[8], name: 'Cheese', description: '', thumbnail: 'assets/thumbnail/cheese-provider.png', image: 'assets/image/cheese.png' },
+        { id: 86, type: 2, category: CAT_LIST[8], name: 'Egg', description: '', thumbnail: 'assets/thumbnail/egg-provider.png', image: 'assets/image/egg.png' },
+        { id: 87, type: 2, category: CAT_LIST[8], name: 'Flour', description: '', thumbnail: 'assets/thumbnail/flour-provider.png', image: 'assets/image/flour.png' },
+        { id: 88, type: 2, category: CAT_LIST[8], name: 'Hot Dog Bun', description: '', thumbnail: 'assets/thumbnail/hotdogbun-provider.png', image: 'assets/image/hot_dog_bun.png' },
+        { id: 89, type: 2, category: CAT_LIST[8], name: 'Hot Dog', description: '', thumbnail: 'assets/thumbnail/hotdograw-provider.png', image: 'assets/image/hot_dog.png' },
+        { id: 90, type: 2, category: CAT_LIST[8], name: 'Ketchup', description: '', thumbnail: 'assets/thumbnail/condimentketchup-provider.png', image: 'assets/image/ketchup.png' },
+        { id: 91, type: 2, category: CAT_LIST[8], name: 'Mustard', description: '', thumbnail: 'assets/thumbnail/condimentmustard-provider.png', image: 'assets/image/mustard.png' },
+        { id: 92, type: 2, category: CAT_LIST[8], name: 'Lettuce', description: '', thumbnail: 'assets/thumbnail/lettuce-provider.png', image: 'assets/image/lettuce.png' },
+        { id: 93, type: 2, category: CAT_LIST[8], name: 'Mushroom', description: '', thumbnail: 'assets/thumbnail/mushroom-provider.png', image: 'assets/image/mushroom.png' },
+        { id: 94, type: 2, category: CAT_LIST[8], name: 'Nut', description: '', thumbnail: 'assets/thumbnail/nutsingredient-provider.png', image: 'assets/image/nut.png' },
+        { id: 95, type: 2, category: CAT_LIST[8], name: 'Olive', description: '', thumbnail: 'assets/thumbnail/olive-provider.png', image: 'assets/image/olive.png' },
+        { id: 96, type: 2, category: CAT_LIST[8], name: 'Onion', description: '', thumbnail: 'assets/thumbnail/onion-provider.png', image: 'assets/image/onion.png' },
+        { id: 97, type: 2, category: CAT_LIST[8], name: 'Potato', description: '', thumbnail: 'assets/thumbnail/potato-provider.png', image: 'assets/image/potato.png' },
+        { id: 98, type: 2, category: CAT_LIST[8], name: 'Rice', description: '', thumbnail: 'assets/thumbnail/rice-provider.png', image: 'assets/image/rice.png' },
+        { id: 99, type: 2, category: CAT_LIST[8], name: 'Steak', description: '', thumbnail: 'assets/thumbnail/meat-provider.png', image: 'assets/image/steak.png' },
+        { id: 100, type: 2, category: CAT_LIST[8], name: 'Thin Cut Steak', description: '', thumbnail: 'assets/thumbnail/meatthin-provider.png', image: 'assets/image/thin_cut_steak.png' },
+        { id: 101, type: 2, category: CAT_LIST[8], name: 'Thick Cut Steak', description: '', thumbnail: 'assets/thumbnail/meatthick-provider.png', image: 'assets/image/thick_cut_steak.png' },
+        { id: 102, type: 2, category: CAT_LIST[8], name: 'Tomato', description: '', thumbnail: 'assets/thumbnail/tomato-provider.png', image: 'assets/image/tomato.png' },
+        { id: 103, type: 2, category: CAT_LIST[8], name: 'Turkey', description: '', thumbnail: 'assets/thumbnail/turkeyingredient-provider.png', image: 'assets/image/turkey.png' },
+        { id: 104, type: 2, category: CAT_LIST[8], name: 'Wine', description: '', thumbnail: 'assets/thumbnail/winebottle-provider.png', image: 'assets/image/wine.png' },
+        
+        { id: 105, type: 2, category: CAT_LIST[9], name: 'Christmas Cracker', description: '', thumbnail: 'assets/thumbnail/christmascracker-provider.png', image: 'assets/image/christmas_cracker.png' },
+        { id: 106, type: 2, category: CAT_LIST[9], name: 'Coffee Machine', description: '', thumbnail: 'assets/thumbnail/coffeecup-provider.png', image: 'assets/image/coffee_machine.png' },
+        { id: 107, type: 2, category: CAT_LIST[9], name: 'Ice Cream', description: '', thumbnail: 'assets/thumbnail/icecreamvanilla-provider.png', image: 'assets/image/ice_cream.png' },
+        { id: 108, type: 2, category: CAT_LIST[9], name: 'Oil', description: '', thumbnail: 'assets/thumbnail/oil-provider.png', image: 'assets/image/oil.png' },
+
     ];
     public selection:any = undefined;
     public equals(value1:iComponent, value2:iComponent) {
